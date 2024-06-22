@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProviderValue } from '../types';
+import { ThemeColorsToken, ThemeContextValue, ThemeProviderValue } from '../types';
 import { BUTTON_THEMES } from '../themes/button.theme';
 
 const CONTENT_SIZE = {
@@ -14,18 +14,31 @@ const CONTENT_SIZE = {
     },
 };
 
-const COLORS_TOKEN = {
+const COLORS_TOKEN: ThemeColorsToken = {
     primary: '',
+    secondary: '',
+    danger: '',
+    warning: '',
 };
 
-export const DEFAULT_THEME: ThemeProviderValue = {
+const COLORS_TOKEN_DARK: ThemeColorsToken = {
+    primary: '',
+    secondary: '',
+    danger: '',
+    warning: '',
+};
+
+export const DEFAULT_PROVIDER_VALUE: ThemeProviderValue = {
     mode: 'light',
     button: BUTTON_THEMES,
     contentSize: CONTENT_SIZE,
-    colorsToken: {
-        dark: COLORS_TOKEN,
+    colorsTokens: {
         light: COLORS_TOKEN,
+        dark: COLORS_TOKEN_DARK,
     },
 };
 
-export const ThemeContext = React.createContext<ThemeProviderValue>(DEFAULT_THEME);
+export const ThemeContext = React.createContext<ThemeContextValue>({
+    ...DEFAULT_PROVIDER_VALUE,
+    colorsToken: DEFAULT_PROVIDER_VALUE.colorsTokens[DEFAULT_PROVIDER_VALUE.mode],
+});

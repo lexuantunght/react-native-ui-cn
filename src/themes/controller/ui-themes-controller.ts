@@ -1,23 +1,18 @@
 import { DEFAULT_THEME } from '../provider/context';
-import { ThemeProviderValue } from '../types';
-import { COLORS } from '../../static/styles/colors';
+import { ThemeMode } from '../types';
 
 class UIThemesController {
-    private theme: ThemeProviderValue;
+    private mode: ThemeMode;
     constructor() {
-        this.theme = DEFAULT_THEME;
+        this.mode = DEFAULT_THEME.mode;
     }
 
-    setTheme(value: ThemeProviderValue) {
-        this.theme = value;
+    setMode(value: ThemeMode) {
+        this.mode = value;
     }
 
-    getTheme() {
-        return this.theme;
-    }
-
-    get Colors() {
-        return COLORS;
+    getMode() {
+        return this.mode;
     }
 }
 

@@ -1,12 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 export const BUTTON_THEMES = StyleSheet.create({
-    primary: {
-        backgroundColor: '',
-    },
-    secondary: {},
-    danger: {},
-    warning: {},
     sm: {
         height: 24,
         borderRadius: 6,
