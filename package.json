@@ -1,0 +1,58 @@
+{
+    "name": "react-native-ui-cn",
+    "version": "1.0.0",
+    "description": "React Native UI Components",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "icon": "node scripts/icon.js src/static/svg src/static/dist-icon",
+        "compile": "node scripts/compile.js && npm run icon && tsc",
+        "build:lib": "cross-env NODE_ENV=production npm run compile"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lexuantunght/react-native-ui-cn.git"
+    },
+    "keywords": [
+        "react",
+        "react-native",
+        "ui",
+        "components"
+    ],
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "author": "lexuantunght",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/lexuantunght/react-native-ui-cn/issues"
+    },
+    "homepage": "https://github.com/lexuantunght/react-native-ui-cn#readme",
+    "peerDependencies": {
+        "react": ">=17 >=18",
+        "react-native": ">=0.63.0"
+    },
+    "dependencies": {
+        "react-native-svg": "13.14.0"
+    },
+    "devDependencies": {
+        "@types/react": "^17",
+        "@types/react-native": "0.67.3",
+        "cross-env": "^7.0.3",
+        "typescript": "^4.9.5",
+        "typescript-transform-paths": "^3.4.6"
+    }
+}
